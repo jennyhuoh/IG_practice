@@ -17,38 +17,48 @@ const App = () => {
     <NavigationContainer ref = {navigationRef}>
       <Stack.Navigator>
       <Stack.Screen 
-        name = "My Book" 
+        name = "IG" 
         component = {HomeScreen} 
         options = {{
-          headerLeft: () => 
-          <TouchableOpacity onPress = {() => navigationRef.current?.navigate("Detail")}>
-            <Image style = {styles.bar} source = {require('./src/img/btn_navbar_mobile.png')}/>          
-          </TouchableOpacity>,
-          headerRight: () => <TouchableOpacity onPress = {() =>alert('This is a button!')}> 
-            <Image style = {styles.search} source = {require('./src/img/btn_search.png')}/>       
-          </TouchableOpacity>,
-          headerTintColor: "#fff",
-          headerStyle: {backgroundColor: "#00b49f"}
-          }}
-          
-        />
+          headerLeft: () => {
+            return(
+          <TouchableOpacity onPress = {() => alert('This is a button!')}>
+            <Image style = {styles.camera} source = {{uri:"https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/btn_home_camera.png"}}/>          
+          </TouchableOpacity>)},
+          headerTitle: () => <Image source = {{uri:"https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/btn_IG.png"}} />,
+          headerRight: () => {
+            return(
+            <TouchableOpacity onPress = {() =>navigationRef.current?.navigate("Detail")}> 
+            <Image style = {styles.message} source = {{uri:"https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/btn_home_message.png"}}/>       
+          </TouchableOpacity>)}
+          }} 
+      />
       <Stack.Screen 
         name = "Detail" 
         component = {DetailScreen}
-        options = {{header: ()=>null}}
-        />
+        options = {{
+          headerLeft: () =>{
+            return(
+          <TouchableOpacity onPress = {() => navigationRef.current?.navigate("IG")}>
+            <Image source = {{uri:"https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/btn_drawer_left.png"}} />
+          </TouchableOpacity>)},
+          headerTitle: () => <Image source = {{uri:"https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/img_drawer_name.png"}} />,
+          headerRight: () => {
+            return(
+              <View style = {styles.drawerright}>
+                <Image source = {{uri:"https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/btn_drawer_video.png"}}/>
+                <Image source = {{uri: "https://github.com/jennyhuoh/IG_practice/blob/master/assets/icon%26btn/btn_drawer_write.png"}}/>
+              </View>
+            )},  
+        }}
+      />
       </Stack.Navigator> 
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  bar: {
-    marginLeft: 7
-  },
-  search: {
-    marginRight: 7
-  }
+
 });
 
 export default App;
