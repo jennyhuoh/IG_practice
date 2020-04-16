@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
+  "devToolsPort": 19006,
   "expoServerPort": 19004,
   "packagerPort": 19005,
-  "packagerPid": 10294,
-  "expoServerNgrokUrl": "https://ax-cuq.anonymous.ig-practice.exp.direct",
-  "packagerNgrokUrl": "https://packager.ax-cuq.anonymous.ig-practice.exp.direct",
-  "ngrokPid": 10317
+  "packagerPid": 13369,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
